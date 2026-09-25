@@ -1,0 +1,23 @@
+[package]
+name = "proofprint-core"
+description = "Signed audit records, content-addressed artifacts, and an append-only Merkle log."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+blake3.workspace = true
+sha2.workspace = true
+ed25519-dalek.workspace = true
+rand_core.workspace = true
+chrono.workspace = true
+thiserror.workspace = true
+hex.workspace = true
+tempfile = "3"
+fs2 = "0.4"

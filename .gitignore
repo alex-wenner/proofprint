@@ -1,0 +1,26 @@
+/target
+**/node_modules/
+**/dist/
+**/*.rs.bk
+Cargo.lock.bak
+__pycache__/
+*.egg-info/
+python/build/
+
+# Local node data directory
+.proofprint/
+data/
+
+# Keys — never commit
+*.key
+!spec/**/*.key
+
+# Editors / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Local agent config
+.claude/

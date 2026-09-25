@@ -1,0 +1,279 @@
+{
+  "version": 1,
+  "seed": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f",
+  "signer": "ed25519:03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8",
+  "blobs": [
+    {
+      "text": "",
+      "id": "ppb1:af1349b9f5f9a1a6a0404dea36dcc9499bcb25c9adc112b7cc9a93cae41f3262"
+    },
+    {
+      "text": "hello",
+      "id": "ppb1:ea8f163db38682925e4491c5e58d4bb3506ef8c14eb78a86e908c5624a67200f"
+    },
+    {
+      "text": "weights",
+      "id": "ppb1:3edc5c4a5df8c79ef4f8dbdc373cd21ca041ccf39fe5693250d004092094dc4a"
+    }
+  ],
+  "records": [
+    {
+      "name": "empty",
+      "record": {
+        "v": 1,
+        "kind": "example.note/v1",
+        "payload": {},
+        "created": "2026-01-15T12:00:00Z",
+        "signer": "ed25519:03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8"
+      },
+      "canonical": "{\"created\":\"2026-01-15T12:00:00Z\",\"kind\":\"example.note/v1\",\"payload\":{},\"signer\":\"ed25519:03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8\",\"v\":1}",
+      "id": "ppr1:f1c28809a07bdb763c993499a32ed37a36acb6683798ea4f1a334b462dec66ae",
+      "sig": "de7ec2a270b5ead6e29ec2a17b4c8e686ada7f4eb0e521ed7c74209619c203d988b6a1fcd2c795ff843204a4e463fa2d59b05db35fc90803d496c998132fbe0d",
+      "leaf": "65b77efaa7698dd56bfaf6973c1366f2fb772449bc206e5b9511029ae2f6b739"
+    },
+    {
+      "name": "unicode",
+      "record": {
+        "v": 1,
+        "kind": "example.note/v1",
+        "payload": {
+          "a": "a",
+          "emoji": "🙂",
+          "message": "quotes \" backslash \\ newline \n tab \t nul \u0000",
+          "title": "Ünïcödé — 日本語 ✓",
+          "z": "z",
+          "é": "sorted by UTF-8 bytes, after z"
+        },
+        "created": "2026-01-15T12:00:00Z",
+        "signer": "ed25519:03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8"
+      },
+      "canonical": "{\"created\":\"2026-01-15T12:00:00Z\",\"kind\":\"example.note/v1\",\"payload\":{\"a\":\"a\",\"emoji\":\"🙂\",\"message\":\"quotes \\\" backslash \\\\ newline \\n tab \\t nul \\u0000\",\"title\":\"Ünïcödé — 日本語 ✓\",\"z\":\"z\",\"é\":\"sorted by UTF-8 bytes, after z\"},\"signer\":\"ed25519:03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8\",\"v\":1}",
+      "id": "ppr1:8a6a7ef76068438ee04429685e6c8265eb45f58a74506cfb7f2f55480b85c334",
+      "sig": "ff8605ff490ead27e89b057fe78001f02693d7be775b8bc25736c0207e89c5c694e20fe3320f4c94344ae44790799f705fb7b6ed6c940419b041942461117d07",
+      "leaf": "0a48b66f09394da96d0f45bf15025e76aac0e1666ff34f308b6a636f262a8028"
+    },
+    {
+      "name": "numbers",
+      "record": {
+        "v": 1,
+        "kind": "example.note/v1",
+        "payload": {
+          "exp": 1e+21,
+          "float": 0.0003,
+          "half": 2.5,
+          "int": 42,
+          "large": 9007199254740993,
+          "list": [
+            1,
+            2.5,
+            -3
+          ],
+          "negative": -7,
+          "one": 1.0,
+          "zero": 0
+        },
+        "created": "2026-01-15T12:00:00Z",
+        "signer": "ed25519:03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8"
+      },
+      "canonical": "{\"created\":\"2026-01-15T12:00:00Z\",\"kind\":\"example.note/v1\",\"payload\":{\"exp\":1e+21,\"float\":0.0003,\"half\":2.5,\"int\":42,\"large\":9007199254740993,\"list\":[1,2.5,-3],\"negative\":-7,\"one\":1.0,\"zero\":0},\"signer\":\"ed25519:03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8\",\"v\":1}",
+      "id": "ppr1:45911471457ef3e035a41aee6c2efcea43be2d512331e9f9fad17d751e38eaba",
+      "sig": "e835a4f8f57cab5e6acd8607d6eb9d703c7ed4fc59f31f569dd2b17865d02b402acb3f7ae8a3306408fe5ae12c138483897a8ae657848cef465d95da53e06703",
+      "leaf": "3cf45e578ef525e04334d65773b47344a1de15a4c48b2d2fdf7a6e2118d6f4d8"
+    },
+    {
+      "name": "nested",
+      "record": {
+        "v": 1,
+        "kind": "example.note/v1",
+        "payload": {
+          "a": {
+            "b": {
+              "c": [
+                {
+                  "d": null
+                },
+                {
+                  "e": true
+                },
+                {
+                  "f": false
+                }
+              ]
+            }
+          },
+          "empty_list": [],
+          "empty_object": {}
+        },
+        "created": "2026-01-15T12:00:00Z",
+        "signer": "ed25519:03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8"
+      },
+      "canonical": "{\"created\":\"2026-01-15T12:00:00Z\",\"kind\":\"example.note/v1\",\"payload\":{\"a\":{\"b\":{\"c\":[{\"d\":null},{\"e\":true},{\"f\":false}]}},\"empty_list\":[],\"empty_object\":{}},\"signer\":\"ed25519:03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8\",\"v\":1}",
+      "id": "ppr1:9edb51c9aaea47b7a39809e3389636b896ec5f85258cc0a3c7424491d203c102",
+      "sig": "72673c696a84acb2338a5d10139a82bfc8f059ed14e99d7e0c6da47fcf926669a5d564fb35227f3da4247de23021173f0398541ef44422c9c8fc64e71ba8f909",
+      "leaf": "19d79ce4e2e9cb379f29b470b64e17c47cf06bd1d38cdf6b94127c70bdcd87ab"
+    },
+    {
+      "name": "linked",
+      "record": {
+        "v": 1,
+        "kind": "ml.training-step/v1",
+        "parents": [
+          "ppr1:f1c28809a07bdb763c993499a32ed37a36acb6683798ea4f1a334b462dec66ae",
+          "ppr1:8a6a7ef76068438ee04429685e6c8265eb45f58a74506cfb7f2f55480b85c334"
+        ],
+        "payload": {
+          "step": 1
+        },
+        "blobs": [
+          {
+            "name": "weights",
+            "blob": "ppb1:3edc5c4a5df8c79ef4f8dbdc373cd21ca041ccf39fe5693250d004092094dc4a",
+            "size": 7,
+            "media": "application/octet-stream"
+          },
+          {
+            "name": "notes",
+            "blob": "ppb1:f7bc584589a6851261310f7cd0c4413392c0aa7577fd40f128b62c8ab4fbba7e",
+            "size": 5
+          }
+        ],
+        "created": "2026-01-15T12:00:00Z",
+        "signer": "ed25519:03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8"
+      },
+      "canonical": "{\"blobs\":[{\"blob\":\"ppb1:3edc5c4a5df8c79ef4f8dbdc373cd21ca041ccf39fe5693250d004092094dc4a\",\"media\":\"application/octet-stream\",\"name\":\"weights\",\"size\":7},{\"blob\":\"ppb1:f7bc584589a6851261310f7cd0c4413392c0aa7577fd40f128b62c8ab4fbba7e\",\"name\":\"notes\",\"size\":5}],\"created\":\"2026-01-15T12:00:00Z\",\"kind\":\"ml.training-step/v1\",\"parents\":[\"ppr1:f1c28809a07bdb763c993499a32ed37a36acb6683798ea4f1a334b462dec66ae\",\"ppr1:8a6a7ef76068438ee04429685e6c8265eb45f58a74506cfb7f2f55480b85c334\"],\"payload\":{\"step\":1},\"signer\":\"ed25519:03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8\",\"v\":1}",
+      "id": "ppr1:7e1cc251104d4ae2d63652aa49966ebe08a730d7a569dd2af8de898bc8ad9339",
+      "sig": "374184dc0e64db11b58f0a9118a5495f9cf9a4252d3640ec80ddd9603f8ca423ca7937c4cf0bc500359aac5a35cb34d8c2ab0364c05472d7a529b484ab67c40b",
+      "leaf": "9b167e6689e8e6a221b10ac5fb7932fb63dc54be3365ccf2479b8dcea90b2469"
+    },
+    {
+      "name": "kind-grammar",
+      "record": {
+        "v": 1,
+        "kind": "a.b-c.d0/v12",
+        "payload": {
+          "k": "v"
+        },
+        "created": "2026-01-15T12:00:00Z",
+        "signer": "ed25519:03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8"
+      },
+      "canonical": "{\"created\":\"2026-01-15T12:00:00Z\",\"kind\":\"a.b-c.d0/v12\",\"payload\":{\"k\":\"v\"},\"signer\":\"ed25519:03a107bff3ce10be1d70dd18e74bc09967e4d6309ba50d5f1ddc8664125531b8\",\"v\":1}",
+      "id": "ppr1:d209acf357793ffde613dffba0251af28b7109543b99b26059d97744e4473256",
+      "sig": "c78ea69a60d3df140fe4c2e41b67bce3e87840eaad47a2b71079ff4973acec93da6f2eabb02f862d1012d01b502196711b5b0f3811a88d30a2b47d09745c3902",
+      "leaf": "4d9297af6c8d6e1059ec91590d88dca1ddfb87e3ebece0b0421e750056a589e9"
+    }
+  ],
+  "roots": [
+    "65b77efaa7698dd56bfaf6973c1366f2fb772449bc206e5b9511029ae2f6b739",
+    "7d470e841c1480a980990e10c386f8bb15bf160eeda9275323e40ea99804ce64",
+    "0016ce0c6bc68cdcf7678d83c1d92e5a4d9ece292aadd7c80a1c100545f0f7f5",
+    "465429dc0ab47e01f5197214a9f5f3cbfcd9c076ab55017847e187911a0832bc",
+    "14b580393aac1ecf2ed8aaf33a16bc7270d729a64d7dc847f2389120f6d6bebc",
+    "2af8d6e7f301618db606865627bb7d7afaeec3c6fa4271146778a117edb53e86"
+  ],
+  "proofs": [
+    {
+      "leaf_index": 0,
+      "tree_size": 1,
+      "path": [],
+      "root": "65b77efaa7698dd56bfaf6973c1366f2fb772449bc206e5b9511029ae2f6b739"
+    },
+    {
+      "leaf_index": 2,
+      "tree_size": 3,
+      "path": [
+        "7d470e841c1480a980990e10c386f8bb15bf160eeda9275323e40ea99804ce64"
+      ],
+      "root": "0016ce0c6bc68cdcf7678d83c1d92e5a4d9ece292aadd7c80a1c100545f0f7f5"
+    },
+    {
+      "leaf_index": 4,
+      "tree_size": 5,
+      "path": [
+        "465429dc0ab47e01f5197214a9f5f3cbfcd9c076ab55017847e187911a0832bc"
+      ],
+      "root": "14b580393aac1ecf2ed8aaf33a16bc7270d729a64d7dc847f2389120f6d6bebc"
+    },
+    {
+      "leaf_index": 0,
+      "tree_size": 6,
+      "path": [
+        "0a48b66f09394da96d0f45bf15025e76aac0e1666ff34f308b6a636f262a8028",
+        "f51c366ba83d5e178a1448ba805aaeeb67e1289222e32521d07d8a3836c77fe4",
+        "d134211bef519efa4f95eb12121a1ce5c28e273bf74004453725bc5cb3013a67"
+      ],
+      "root": "2af8d6e7f301618db606865627bb7d7afaeec3c6fa4271146778a117edb53e86"
+    },
+    {
+      "leaf_index": 1,
+      "tree_size": 6,
+      "path": [
+        "65b77efaa7698dd56bfaf6973c1366f2fb772449bc206e5b9511029ae2f6b739",
+        "f51c366ba83d5e178a1448ba805aaeeb67e1289222e32521d07d8a3836c77fe4",
+        "d134211bef519efa4f95eb12121a1ce5c28e273bf74004453725bc5cb3013a67"
+      ],
+      "root": "2af8d6e7f301618db606865627bb7d7afaeec3c6fa4271146778a117edb53e86"
+    },
+    {
+      "leaf_index": 2,
+      "tree_size": 6,
+      "path": [
+        "19d79ce4e2e9cb379f29b470b64e17c47cf06bd1d38cdf6b94127c70bdcd87ab",
+        "7d470e841c1480a980990e10c386f8bb15bf160eeda9275323e40ea99804ce64",
+        "d134211bef519efa4f95eb12121a1ce5c28e273bf74004453725bc5cb3013a67"
+      ],
+      "root": "2af8d6e7f301618db606865627bb7d7afaeec3c6fa4271146778a117edb53e86"
+    },
+    {
+      "leaf_index": 3,
+      "tree_size": 6,
+      "path": [
+        "3cf45e578ef525e04334d65773b47344a1de15a4c48b2d2fdf7a6e2118d6f4d8",
+        "7d470e841c1480a980990e10c386f8bb15bf160eeda9275323e40ea99804ce64",
+        "d134211bef519efa4f95eb12121a1ce5c28e273bf74004453725bc5cb3013a67"
+      ],
+      "root": "2af8d6e7f301618db606865627bb7d7afaeec3c6fa4271146778a117edb53e86"
+    },
+    {
+      "leaf_index": 4,
+      "tree_size": 6,
+      "path": [
+        "4d9297af6c8d6e1059ec91590d88dca1ddfb87e3ebece0b0421e750056a589e9",
+        "465429dc0ab47e01f5197214a9f5f3cbfcd9c076ab55017847e187911a0832bc"
+      ],
+      "root": "2af8d6e7f301618db606865627bb7d7afaeec3c6fa4271146778a117edb53e86"
+    },
+    {
+      "leaf_index": 5,
+      "tree_size": 6,
+      "path": [
+        "9b167e6689e8e6a221b10ac5fb7932fb63dc54be3365ccf2479b8dcea90b2469",
+        "465429dc0ab47e01f5197214a9f5f3cbfcd9c076ab55017847e187911a0832bc"
+      ],
+      "root": "2af8d6e7f301618db606865627bb7d7afaeec3c6fa4271146778a117edb53e86"
+    }
+  ],
+  "manifests": [
+    {
+      "manifest": {
+        "tensors": [
+          {
+            "dtype": "F32",
+            "name": "layer.bias",
+            "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+            "shape": []
+          },
+          {
+            "dtype": "F32",
+            "name": "layer.weight",
+            "sha256": "b9c80b5adeca450753a16950c3cc655d271f7bef7a485bc83f112b72fef21d37",
+            "shape": [
+              2
+            ]
+          }
+        ]
+      },
+      "canonical": "{\"tensors\":[{\"dtype\":\"F32\",\"name\":\"layer.bias\",\"sha256\":\"df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119\",\"shape\":[]},{\"dtype\":\"F32\",\"name\":\"layer.weight\",\"sha256\":\"b9c80b5adeca450753a16950c3cc655d271f7bef7a485bc83f112b72fef21d37\",\"shape\":[2]}]}",
+      "digest": "sha256:9172704f56c07cf5bfc778c227355f5dd0df91fa7f3893994a20109893a418ba"
+    }
+  ]
+}

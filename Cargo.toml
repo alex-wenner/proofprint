@@ -1,0 +1,31 @@
+[workspace]
+resolver = "2"
+members = ["crates/proofprint-core", "crates/proofprint-cli", "crates/proofprint-node"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+license = "MIT OR Apache-2.0"
+
+[workspace.dependencies]
+proofprint-core = { path = "crates/proofprint-core" }
+
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["std"] }
+blake3 = "1"
+sha2 = "0.10"
+ed25519-dalek = { version = "2", features = ["rand_core"] }
+rand_core = { version = "0.6", features = ["getrandom"] }
+chrono = { version = "0.4", default-features = false, features = ["clock", "std", "serde"] }
+thiserror = "2"
+anyhow = "1"
+hex = "0.4"
+clap = { version = "4", features = ["derive", "env"] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+
+[workspace.lints.rust]
+unsafe_code = "forbid"

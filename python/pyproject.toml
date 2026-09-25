@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proofprint"
+version = "0.1.0"
+description = "Client for a local ProofPrint node: publish signed training, model, and evaluation records."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT OR Apache-2.0" }
+dependencies = []
+
+[project.optional-dependencies]
+transformers = ["transformers>=4.40"]
+
+[tool.setuptools]
+packages = ["proofprint"]

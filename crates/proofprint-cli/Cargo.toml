@@ -1,0 +1,24 @@
+[package]
+name = "proofprint-cli"
+description = "Command-line interface to the ProofPrint audit ledger."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "proofprint"
+path = "src/main.rs"
+
+[dependencies]
+proofprint-core.workspace = true
+clap.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+chrono.workspace = true
+hex.workspace = true
+tempfile = "3"
