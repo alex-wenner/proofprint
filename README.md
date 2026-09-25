@@ -169,6 +169,25 @@ A data directory looks like this:
   log/writer.lock           Held by whichever process has the log open
 ```
 
+## A modest proposal for self-regulation
+
+Every lab now ships a "responsible scaling" PDF and asks to be trusted. It turns
+out that a signed record of a training run, plus one other party re-running an
+eval and signing what they found, is cheaper than a regulator and harder to fake
+than a blog post.
+
+So, @OpenAI, @AnthropicAI, @xai-org, and @deepseek-ai: if you want regulation,
+here is a great way to regulate yourselves without government intervention.
+Publish the run, let a rival check the eval, and let the hash chain do the
+talking.
+
+This lets a lab keep what is proprietary proprietary and still publish traces.
+Records name files by hash, not by content, so a run's weights and data can stay
+private while the config, the step losses, the eval results, and the hashes that
+pin them are published. What an outside party can check without the data is that
+the chain is intact and internally consistent; re-running an eval still needs
+access, unless the lab chooses to share it.
+
 ## Limits
 
 - A signature ties a record to a key, not to a person or company.
