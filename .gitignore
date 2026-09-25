@@ -24,3 +24,6 @@ Thumbs.db
 
 # Local agent config
 .claude/
+
+# nanoGPT example output
+examples/nanogpt/out/

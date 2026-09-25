@@ -45,6 +45,13 @@ example records from two keys: a dataset, a run, two steps, a model, an
 evaluation, a second party's re-run, and that party's verification. None of it
 describes real training.
 
+![The explorer showing eleven records in append order](docs/images/explorer-history.png)
+
+A record page shows the same record's lineage, payload, attachments, and the
+result of re-checking its signature, inclusion proof, and stored files:
+
+![A model record with its lineage, payload, attachments, and checks](docs/images/explorer-record.png)
+
 ## Record your own training
 
 Start a node, which creates `.proofprint/keys/default.key` on first run:
@@ -69,6 +76,25 @@ model = run.model("ticket-router", "1.0.0", "transformer-encoder", weights="out/
 
 With `transformers`, pass `RecordingCallback` to the `Trainer` instead. See
 [python/README.md](python/README.md).
+
+## Train nanoGPT and watch it land
+
+[examples/nanogpt/train_recorded.py](examples/nanogpt/train_recorded.py) runs a
+small [nanoGPT](https://github.com/karpathy/nanoGPT) training loop and publishes
+the chain as it goes: a dataset record with a manifest of file hashes, a run
+record with the config and the nanoGPT commit, a record per logged step with its
+loss, the checkpoint, the resulting model, and a final evaluation. It is small
+enough to finish on a CPU in under a minute.
+
+```bash
+cargo run -p proofprint-node
+# in another terminal
+python examples/nanogpt/train_recorded.py --nanogpt /path/to/nanoGPT
+```
+
+It prints the explorer URL for the resulting model. The same four calls
+(`dataset`, `TrainingRecorder`, `step`, `model`) drop into nanoGPT's own
+`train.py`; see [examples/nanogpt/README.md](examples/nanogpt/README.md).
 
 ## Command line
 
@@ -130,6 +156,7 @@ python/                   Python client
 spec/v1/record.md         Record format, identifiers, Merkle rules
 spec/v1/vectors.json      Frozen signed records, ids, roots, and proofs
 docs/                     Architecture and plans
+examples/nanogpt/         Recording a nanoGPT training run, step by step
 ```
 
 A data directory looks like this:
